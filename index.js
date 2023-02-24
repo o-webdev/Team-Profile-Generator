@@ -49,6 +49,7 @@ inquirer.prompt([{
 });
 }
 
+
 const promptForNextEmployee = () => {
     inquirer.prompt([{
         // choice of 3
@@ -57,19 +58,45 @@ const promptForNextEmployee = () => {
         message: 'Which type of team memeber would you like to add?',
         choices: ['Engineer', 'Intern', 'I don\'t want to add any more team members']
     }]).then(response => {
-        // if engineer
-        //    promptForEngineer
-        // else if intern
-        //    promptForIntern
-        // else
-        //    use the functionality from page-template to generate the team
-    })
-}
+       
+        if (response.role === 'Engineer') {  // if engineer promptForEngineer
+            promptForEngineer();
+        } else if (response.role === 'Intern') {  // else if intern
+            promptForIntern();
+        } else {
+            const generateTeam = render(teamMembers);  //    use the functionality from page-template to generate the team
+            fs.writeFile(outputPath, renderedPage, err => {
+                if (err) throw err;
+                console.log('Team members page generated successfully');
+            });
+        };
+    });
+};
 
 const promptForEngineer = () => {
     inquirer.prompt([{
         //engineer questions
-    }]).then(response => {
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of the engineer?'
+        },
+        {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID of the engineer?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the email of the engineer?'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is the github of the engineer?'
+        },
+        
+    ]).then(response => {
         // add new engineer to employees array
         // promptForNextEmployee
     })
