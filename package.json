@@ -1,0 +1,22 @@
+{
+  "name": "team_generator",
+  "version": "1.0.0",
+  "description": "Test-Driven Development: Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omar-ahm/WK12-Team-Profile-Generator.git"
+  },
+  "author": "omar-ahm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omar-ahm/WK12-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/omar-ahm/WK12-Team-Profile-Generator#readme"
+}
