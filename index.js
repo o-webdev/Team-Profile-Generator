@@ -98,17 +98,42 @@ const promptForEngineer = () => {
         
     ]).then(response => {
         // add new engineer to employees array
+        const engineer = new Engineer(response.name, response.id, response.email, response.github);
+        teamMembers.push(engineer);
         // promptForNextEmployee
-    })
-}
+        promptForNextEmployee();
+    });
+};
 
 const promptForIntern = () => {
     inquirer.prompt([{
         //intern questions
-    }]).then(response => {
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of the intern?'
+        },
+        {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID of the intern?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the email of the intern?'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What is the school of the intern?'
+        },
+        ,]).then(response => {
         // add new intern to employees array
+        const intern = new Intern(response.name, response.id, response.email, response.school);
+        teamMembers.push(intern);
         // promptForNextEmployee
-    })
+        promptForNextEmployee();
+    });
 }
 
 const buildPage = () => {
