@@ -64,6 +64,10 @@ const promptForNextEmployee = () => {
         } else if (response.role === 'Intern') {  // else if intern
             promptForIntern();
         } else {
+            // Check if the output page exisits, if it doesnt create it
+            if (!fs.existsSync(OUTPUT_DIR)) {
+                fs.mkdirSync(OUTPUT_DIR);
+            }
             const generateTeam = render(teamMembers);  //    use the functionality from page-template to generate the team
             fs.writeFile(outputPath, generateTeam, err => {
                 if (err) throw err;
@@ -134,7 +138,6 @@ const promptForIntern = () => {
         // promptForNextEmployee
         promptForNextEmployee();
     });
-    buildPage()
 }
 
 const buildPage = () => {
