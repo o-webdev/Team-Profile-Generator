@@ -37,12 +37,12 @@ inquirer.prompt([{
 },
 {
     type: 'input',
-    name: 'officeNumberl',
+    name: 'officeNumber',
     message:'What is the office number of the team Manager?'  
 }
 ]).then(response => {
     // populate manager info
-    const manager = new Manager(response.naem, response.id, response.email, response.officeNumber);
+    const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
     teamMembers.push(manager);
     // promptForNexEmployee ()
     promptForNextEmployee();
@@ -65,7 +65,7 @@ const promptForNextEmployee = () => {
             promptForIntern();
         } else {
             const generateTeam = render(teamMembers);  //    use the functionality from page-template to generate the team
-            fs.writeFile(outputPath, renderedPage, err => {
+            fs.writeFile(outputPath, generateTeam, err => {
                 if (err) throw err;
                 console.log('Team members page generated successfully');
             });
