@@ -1,0 +1,43 @@
+.team-heading {
+    background-color: #e84855;
+    color: #ffffff;
+  }
+  
+  .team-area {
+    max-width: 1000px;
+    margin: 3em auto;
+    flex-wrap: wrap;
+  }
+
+  .employee-card {
+    margin: 1em;
+    max-width: 350px;
+    width: 90%;
+    min-height: 22rem;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 10px;
+  }
+  h2.card-title {
+    border-bottom: #ffffff solid 1px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 25px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f6f7f8;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .list-group-item {
+    color: #000000;
+    text-decoration: none;
+  }

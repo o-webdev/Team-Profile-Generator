@@ -13,6 +13,11 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Credits](#credits)
 - [License](#license)
 
+## Screenshot 
+<br>
+
+![Alt text](assets/Screenshot%202023-02-25%20at%2014.10.00.png)
+
 ## Installation
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
@@ -30,7 +35,10 @@ After setting up the repository ensure to run the following commands and answer 
 ## Credits
 
 - Some starter pseudocode was provided in class by D.Mueller
+- CSS starter code provided in class via slack
 - Regex was used to implement email validation - https://regexr.com/3e48o
+- README Template - https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
+- 
 
 
 
