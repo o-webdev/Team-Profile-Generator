@@ -127,15 +127,22 @@ const promptForIntern = () => {
             name: 'school',
             message: 'What is the school of the intern?'
         },
-        ,]).then(response => {
+        ]).then(response => {
         // add new intern to employees array
         const intern = new Intern(response.name, response.id, response.email, response.school);
         teamMembers.push(intern);
         // promptForNextEmployee
         promptForNextEmployee();
     });
+    buildPage()
 }
 
 const buildPage = () => {
-// render(myArrayOfTeamMembers)
+// render(myArrayOfTeamMembers
+const orgChart = render(teamMembers);
+fs.writeFile(outputPath, orgChart, (err) => {
+    if (err) throw err;
+    console.log('Team member page sucessfully generated')
+})
 }
+promptForManager();
