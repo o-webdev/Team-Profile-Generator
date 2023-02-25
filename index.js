@@ -13,6 +13,12 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+// Function to validate that the entered email is in the correct format 
+const validateEmail = (email) => {
+    // Regular expression for email format validation
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email) || "Please enter a valid email address";
+  };
 // Array to hold team members
 const teamMembers = [];
 // Starter pseudocode provided in class 
@@ -33,7 +39,8 @@ inquirer.prompt([{
 {
     type: 'input',
     name: 'email',
-    message:'What is the email address of the team Manager?'
+    message:'What is the email address of the team Manager?',
+    validate: validateEmail
 },
 {
     type: 'input',
@@ -92,7 +99,8 @@ const promptForEngineer = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'What is the email of the engineer?'
+            message: 'What is the email of the engineer?',
+            validate: validateEmail
         },
         {
             type: 'input',
@@ -124,7 +132,8 @@ const promptForIntern = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'What is the email of the intern?'
+            message: 'What is the email of the intern?',
+            validate: validateEmail
         },
         {
             type: 'input',
